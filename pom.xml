@@ -58,6 +58,14 @@
             <artifactId>elasticsearch</artifactId>
             <version>6.6.2</version>
         </dependency>
+
+
+        <!-- com.hf -->
+        <dependency>
+            <groupId>com.hf</groupId>
+            <artifactId>tools-utils-item</artifactId>
+            <version>1.0</version>
+        </dependency>
     </dependencies>
 
     <build>

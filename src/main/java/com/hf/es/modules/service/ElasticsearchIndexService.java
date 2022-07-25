@@ -1,4 +1,4 @@
-package com.hf.modules.service.es;
+package com.hf.es.modules.service;
 
 import com.alibaba.fastjson.JSON;
 import com.google.common.collect.ImmutableMap;
@@ -53,7 +53,7 @@ public class ElasticsearchIndexService {
      * @return 索引是否创建成功
      * @throws IOException
      */
-    public boolean elasticIndexCreate(String uuid, Class<?>... classes) throws IOException {
+    public boolean elasticIndexCreate(Object uuid, Class<?>... classes) throws IOException {
         Map<String, Map<String, String>> map = new HashMap<>(128);
         for (Class<?> clazz : classes) {
             Field[] fields = clazz.getDeclaredFields();

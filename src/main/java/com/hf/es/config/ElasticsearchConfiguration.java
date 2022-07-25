@@ -1,4 +1,4 @@
-package com.hf.config;
+package com.hf.es.config;
 
 import org.apache.http.HttpHost;
 import org.elasticsearch.client.RestClient;
@@ -36,11 +36,14 @@ public class ElasticsearchConfiguration {
 
     @Bean(destroyMethod = "close", name = "client")
     public RestHighLevelClient initRestClient() {
-        RestClientBuilder builder = RestClient.builder(new HttpHost(host, port))
+        RestClientBuilder builder = RestClient.builder(new HttpHost(host, port, "http"))
                 .setRequestConfigCallback(requestConfigBuilder -> requestConfigBuilder
                         .setConnectTimeout(connTimeout)
                         .setSocketTimeout(socketTimeout)
-                        .setConnectionRequestTimeout(connectionRequestTimeout));
+                        .setConnectionRequestTimeout(connectionRequestTimeout)
+                ).setMaxRetryTimeoutMillis(5 * 60 * 1000);
         return new RestHighLevelClient(builder);
     }
+
+
 }

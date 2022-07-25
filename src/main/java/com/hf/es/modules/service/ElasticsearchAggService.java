@@ -1,8 +1,8 @@
-package com.hf.modules.service.es;
+package com.hf.es.modules.service;
 
-import com.hf.config.enums.ElasticCustomCodeEnum;
-import com.hf.config.enums.ElasticMetricsEnum;
-import com.hf.config.exception.ElasticCustomException;
+import com.hf.tools.config.enums.ElasticCustomCodeEnum;
+import com.hf.tools.config.enums.ElasticMetricsEnum;
+import com.hf.tools.config.exception.ElasticCustomException;
 import org.elasticsearch.action.search.SearchRequest;
 import org.elasticsearch.action.search.SearchResponse;
 import org.elasticsearch.client.RequestOptions;
